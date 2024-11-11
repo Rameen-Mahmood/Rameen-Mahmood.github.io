@@ -33,7 +33,7 @@
       margin-bottom: 20px;
     }
     a {
-      color: #305cde; /* Applied globally to all anchor tags */
+      color: #305cde;
       text-decoration: none;
       font-weight: 600;
     }
@@ -45,13 +45,13 @@
       list-style-type: disc;
     }
     .contact-info a, .contact-info i {
-      display: inline; /* Changes to inline for alignment */
-      vertical-align: middle; /* Vertical alignment with text */
-      margin-right: 5px; /* Space between icon and text */
+      display: inline;
+      vertical-align: middle;
+      margin-right: 5px;
     }
     .contact-info a {
-      display: inline-block; /* Ensures the link is appropriately aligned */
-      margin-bottom: 10px; /* Space below each link */
+      display: inline-block;
+      margin-bottom: 10px;
     }
     .profile-section {
       display: flex;
@@ -69,6 +69,27 @@
     }
     .profile-text {
       flex: 1;
+    }
+
+    /* Dark mode styles */
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: #e0e0e0;
+        background-color: #121212;
+      }
+      .container {
+        background-color: #1e1e1e;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      }
+      a {
+        color: #82aaff;
+      }
+      .profile-text, .contact-info {
+        color: #cfcfcf;
+      }
+      ul {
+        color: #cfcfcf;
+      }
     }
   </style>
 </head>
