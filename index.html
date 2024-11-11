@@ -5,12 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rameen Mahmood</title>
   
-  <!-- Link to Google Fonts with Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
-  <!-- Link to Font Awesome for GitHub icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
@@ -23,7 +20,7 @@
       background-color: #f8f9fa;
     }
     .container {
-      max-width: 800px;
+      max-width: 960px;
       margin: 20px auto;
       padding: 20px;
       background-color: #fff;
@@ -33,18 +30,11 @@
     header, section, footer {
       margin-bottom: 20px;
     }
-    h1 {
-      color: #3b3b3b;
-      font-weight: 700;
-    }
-    h2 {
-      color: #3b3b3b;
-      font-weight: 600;
-    }
     nav a {
-      color: #4a74f5; /* Updated color to match the specified blue */
+      color: #305cde;
+      margin-right: 15px;
       text-decoration: none;
-      margin-right: 10px;
+      font-weight: 600;
     }
     nav a:hover {
       text-decoration: underline;
@@ -53,14 +43,32 @@
       padding-left: 20px;
       list-style-type: disc;
     }
-    .contact-info a {
-      display: inline-block;
-      margin-right: 10px;
-      color: #007acc;
-      text-decoration: none;
+    .contact-info a, .contact-info i {
+      display: inline; /* Changes to inline for alignment */
+      color: #305cde;
+      vertical-align: middle; /* Vertical alignment with text */
+      margin-right: 5px; /* Space between icon and text */
     }
-    .contact-info a:hover {
-      text-decoration: underline;
+    .contact-info a {
+      display: inline-block; /* Ensures the link is appropriately aligned */
+      margin-bottom: 10px; /* Space below each link */
+    }
+    .profile-section {
+      display: flex;
+      align-items: flex-start;
+      padding: 20px;
+      gap: 40px;
+    }
+    .profile-img-container {
+      flex: 0 0 30%;
+      padding-right: 20px;
+    }
+    .profile-img {
+      width: 100%;
+      height: auto;
+    }
+    .profile-text {
+      flex: 1;
     }
   </style>
 </head>
@@ -76,26 +84,21 @@
     </nav>
   </header>
 
-  <section id="about">
-    <p>I'm a PhD student in the Electrical and Computer Engineering Department at New York University (Tandon). I am part of mLab, where I'm advised by Professor Danny Huang. Prior to this, I earned my BSc in Electrical Engineering (Honors) at New York University Abu Dhabi.</p>
-  </section>
-
-  <section id="research">
-    <p>My research lies at the intersection of <strong>computer networks</strong> and <strong>machine learning</strong>, with a focus on <strong>clinical applications</strong>. I explore ways to use machine learning on network traffic data to gain insights into <strong>patient well-being</strong> and <strong>cognitive states</strong>. My work aims to leverage network traffic analysis as a non-invasive tool for inferring health markers, potentially contributing to the understanding of mental health, neurodegenerative diseases, and other clinical indicators.</p>
-    <p>I am currently interested in and working on:</p>
-    <ul>
-      <li>Exploring machine learning for network traffic analysis to study cognitive states, including patterns related to sleep, mental health, and neurodegenerative conditions.</li>
-
-      <li>Developing multi-classification models based on network traffic to understand the digital behaviors of the visually impaired.</li>
-      <li>Fine-tuning large language models on the <a href="https://inspector.engineering.nyu.edu/" target="_blank">IoT Inspector</a> dataset of over 6,500 users to identify devices on a network.</li>
-    </ul>
+  <section id="about" class="profile-section">
+    <div class="profile-img-container">
+      <img src="image.jpg" alt="Rameen Mahmood" class="profile-img">
+    </div>
+    <div class="profile-text">
+      <p>I'm a PhD student in the Electrical and Computer Engineering Department at New York University (Tandon). I am part of <a href="https://hdanny.org/" target="_blank">mLab</a>, where I'm advised by Professor Danny Huang. Prior to this, I earned my BSc in Electrical Engineering (Honors) at New York University Abu Dhabi.</p>
+      <p>My research lies at the intersection of <strong>computer networks</strong> and <strong>machine learning</strong>, with a focus on <strong>clinical applications</strong>. I explore ways to use machine learning on network traffic data to gain insights into <strong>patient well-being</strong> and <strong>cognitive states</strong>. My work aims to leverage network traffic analysis as a non-invasive tool for inferring health markers, potentially contributing to the understanding of mental health, neurodegenerative diseases, and other clinical indicators.</p>
+    </div>
   </section>
 
   <section id="news">
     <h2>News</h2>
     <ul>
       <li><b>Nov 2024:</b> Presented <a href="https://routersense.ai/" target="_blank">RouterSense</a>, a network-based health monitoring system for older adults, at the Association for the Advancement of Artificial Intelligence (AAAI) 2024 Fall Symposium Series on AI for Aging in Place.</li>
-      <li><b>Oct 2024:</b> Presented <a href="https://hdanny.org/static/ieee-bsn-24.pdf" target="">Your Router as Fitbit</a> at the IEEE-EMBS International Conference on Body Sensor Networks (IEEE BSN 2024), Poster Session.</li>
+      <li><b>Oct 2024:</b> Presented <a href="https://hdanny.org/static/ieee-bsn-24.pdf" target="_blank">Your Router as Fitbit</a> at the IEEE-EMBS International Conference on Body Sensor Networks (IEEE BSN 2024), Poster Session.</li>
       <li><b>Sept 2024:</b> Gave a guest lecture on "Machine Learning for Big Data" for CUSP-GX 8083 - Big Data Management & Analysis (Fall 2024).</li>
       <li><b>March 2024:</b> Presented "Decoding Digital Footprints of the Visually Impaired: A Machine Learning Approach to Network Traffic Analysis" at NSBE 2024.</li>
     </ul>
@@ -106,7 +109,7 @@
     <div class="contact-info">
       <p>📧 <a href="mailto:rameen.mahmood@nyu.edu">rameen.mahmood@nyu.edu</a></p>
       <p><a href="https://github.com/Rameen-Mahmood" target="_blank"><i class="fab fa-github"></i> Rameen-Mahmood</a></p>
-      <p>🎓 <a href="https://scholar.google.com/citations?user=ceb6wGkAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></p>
+      <p>🎓 <a href="https://scholar.google.com/citations?user=ceb6wGkAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
     </div>
   </footer>
 </div>
