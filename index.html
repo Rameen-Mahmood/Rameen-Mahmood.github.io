@@ -368,7 +368,7 @@
     <li><span class="news-date">Mar 2026</span><span><a href="https://preprints.jmir.org/preprint/84618">Digital phenotyping</a> paper accepted to JMIR Formative Research.</span></li>
     <li><span class="news-date">Nov 2025</span><span>Guest lecture for ECE-GY 9113 (Big Data) on scalable data pipelines and LLM/ML integration for large-scale analytics.</span></li>
     <li><span class="news-date">Nov 2025</span><span>Presented RouterSense at the Society for Neuroscience (SfN) 2025.</span></li>
-    <li class="news-more"><span class="news-date">Nov 2025</span><span>Talk at the University of Chicago: &ldquo;Decoding the digital home&rdquo; (Network Operations and Internet Security Lab).</span></li>
+    <li><span class="news-date">Nov 2025</span><span>Talk at the University of Chicago: &ldquo;Decoding the digital home&rdquo; (Network Operations and Internet Security Lab).</span></li>
     <li class="news-more"><span class="news-date">Oct 2025</span><span>Presented our LLM-based IoT identification work at NYC Privacy Day, Cornell Tech.</span></li>
     <li class="news-more"><span class="news-date">Oct 2025</span><span>New <a href="https://arxiv.org/abs/2510.09763">preprint</a> on network traffic as an ethnographic lens for AI tool practices.</span></li>
     <li class="news-more"><span class="news-date">Sept 2025</span><span>New <a href="https://preprints.jmir.org/preprint/84618">preprint</a> on digital phenotyping via passive network traffic monitoring.</span></li>
@@ -402,13 +402,16 @@
     });
   });
   var newsBtn = document.getElementById('news-btn');
-  newsBtn.addEventListener('click', function(){
-    var items = document.querySelectorAll('.news-more');
-    var isOpen = items[0].classList.contains('open');
-    items.forEach(function(i){ i.classList.toggle('open', !isOpen); });
-    newsBtn.textContent = isOpen ? 'show older news \u2193' : 'hide older news \u2191';
-    newsBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-  });
+  if (newsBtn) {
+    newsBtn.addEventListener('click', function(){
+      var items = document.querySelectorAll('.news-more');
+      if (!items.length) return;
+      var isOpen = items[0].classList.contains('open');
+      items.forEach(function(i){ i.classList.toggle('open', !isOpen); });
+      newsBtn.textContent = isOpen ? 'show older news \u2193' : 'hide older news \u2191';
+      newsBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    });
+  }
 </script>
 </body>
 </html>
