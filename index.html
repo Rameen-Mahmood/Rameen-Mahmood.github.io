@@ -106,10 +106,13 @@
   .hero-text { flex: 1; min-width: 0; }
   .hero-text p { margin: 0 0 0.85rem; }
   .hero-text p:last-child { margin-bottom: 0; }
-  .hero-contact { color: var(--text-secondary); font-size: 0.95em; }
+  .hero-side { display: flex; flex-direction: column; gap: 14px; flex-shrink: 0; }
+  .hero-side .contact-grid { font-size: 14px; width: 200px; }
+  .hero-side .contact-grid div { margin-bottom: 4px; }
   @media (max-width: 480px) {
     .hero { flex-direction: column; gap: 16px; }
     .hero-img { width: 110px; height: 110px; }
+    .hero-side .contact-grid { width: auto; }
   }
   .research-area {
     margin-bottom: 16px;
@@ -253,11 +256,18 @@
   </header>
 
   <section class="hero">
-    <img class="hero-img" src="image.jpg" alt="Rameen Mahmood">
+    <div class="hero-side">
+      <img class="hero-img" src="image.jpg" alt="Rameen Mahmood">
+      <div class="contact-grid" id="contact">
+        <div><span class="lbl">email</span> <a href="mailto:rameen.mahmood@nyu.edu">rameen.mahmood@nyu.edu</a></div>
+        <div><span class="lbl">github</span> <a href="https://github.com/Rameen-Mahmood">Rameen-Mahmood</a></div>
+        <div><span class="lbl">scholar</span> <a href="https://scholar.google.com/citations?user=ceb6wGkAAAAJ&amp;hl=en">Google Scholar</a></div>
+        <div><span class="lbl">cv</span> <a href="resume.pdf">resume.pdf</a></div>
+      </div>
+    </div>
     <div class="hero-text">
       <p>I'm a PhD candidate in the Electrical and Computer Engineering Department at NYU Tandon, advised by <a href="https://hdanny.org/">Danny Huang</a> in mLab. I earned my BSc in Electrical Engineering (Honors) from NYU Abu Dhabi.</p>
       <p>My research lies at the intersection of machine learning and computer networks, with a focus on clinical and health applications. I also work with large language models for identifying devices on the network.</p>
-      <p class="hero-contact"><a href="mailto:rameen.mahmood@nyu.edu">rameen.mahmood@nyu.edu</a> &middot; <a href="https://github.com/Rameen-Mahmood">github</a> &middot; <a href="https://scholar.google.com/citations?user=ceb6wGkAAAAJ&amp;hl=en">scholar</a> &middot; <a href="resume.pdf">cv</a></p>
     </div>
   </section>
 
@@ -381,14 +391,6 @@
     <li class="news-more"><span class="news-date">Mar 2024</span><span>Presented &ldquo;Decoding digital footprints of the visually impaired&rdquo; at NSBE 2024.</span></li>
   </ul>
   <button class="news-toggle" id="news-btn" aria-expanded="false">show older news &darr;</button>
-
-  <h2 id="contact">Contact</h2>
-  <div class="contact-grid">
-    <div><span class="lbl">email</span> <a href="mailto:rameen.mahmood@nyu.edu">rameen.mahmood@nyu.edu</a></div>
-    <div><span class="lbl">github</span> <a href="https://github.com/Rameen-Mahmood">Rameen-Mahmood</a></div>
-    <div><span class="lbl">scholar</span> <a href="https://scholar.google.com/citations?user=ceb6wGkAAAAJ&amp;hl=en">Google Scholar</a></div>
-    <div><span class="lbl">cv</span> <a href="resume.pdf">resume.pdf</a></div>
-  </div>
 
 </div>
 
