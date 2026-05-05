@@ -1,159 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rameen Mahmood</title>
-  
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👾</text></svg>" type="image/svg+xml">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <style>
-    /* Base styling for light mode */
-    body {
-      font-family: 'Montserrat', sans-serif;
-      line-height: 1.6;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rameen Mahmood</title>
+<meta name="description" content="Rameen Mahmood — PhD candidate, New York University. Research at the intersection of machine learning and computer networks, with a focus on clinical and health applications.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --text: #1a1a1a;
+    --text-secondary: #555;
+    --text-tertiary: #888;
+    --border: rgba(0,0,0,0.1);
+    --border-strong: rgba(0,0,0,0.2);
+    --bg: #fdfdfb;
+    --bg-secondary: #f4f2ec;
+    --link: #1a4d8f;
+    --serif: Georgia, 'Times New Roman', Times, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #e8e6e1;
+      --text-secondary: #a8a6a1;
+      --text-tertiary: #6f6d68;
+      --border: rgba(255,255,255,0.12);
+      --border-strong: rgba(255,255,255,0.22);
+      --bg: #161513;
+      --bg-secondary: #232220;
+      --link: #7fb3ee;
     }
-    .container {
-      max-width: 960px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    header, section, footer {
-      margin-bottom: 20px;
-    }
-    a {
-      color: #305cde;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      padding-left: 20px;
-      list-style-type: disc;
-    }
-    .contact-info a, .contact-info i {
-      display: inline;
-      vertical-align: middle;
-      margin-right: 5px;
-    }
-    .contact-info a {
-      display: inline-block;
-      margin-bottom: 10px;
-    }
-    .profile-section {
-      display: flex;
-      align-items: flex-start;
-      padding: 20px;
-      gap: 40px;
-    }
-    .profile-img-container {
-      flex: 0 0 30%;
-      padding-right: 20px;
-    }
-    .profile-img {
-      width: 100%;
-      height: auto;
-    }
-    .profile-text {
-      flex: 1;
-    }
-
-    /* Dark mode styles */
-    @media (prefers-color-scheme: dark) {
-      body {
-        color: #e0e0e0;
-        background-color: #121212;
-      }
-      .container {
-        background-color: #1e1e1e;
-        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-      }
-      a {
-        color: #82aaff;
-      }
-      .profile-text, .contact-info {
-        color: #cfcfcf;
-      }
-      ul {
-        color: #cfcfcf;
-      }
-    }
-  </style>
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--serif);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    margin: 2.75rem 0 0.85rem;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  p, li { font-size: 16px; line-height: 1.75; }
+  a {
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-strong);
+    transition: border-color 0.15s ease;
+  }
+  a:hover { border-bottom-color: var(--link); }
+  .subtitle {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+  .subtitle .line2 { display: block; }
+  .topnav {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+    font-family: var(--serif);
+  }
+  .topnav a {
+    color: var(--text);
+    border-bottom: none;
+    margin-right: 4px;
+  }
+  .topnav a:hover { color: var(--link); }
+  .topnav .sep { color: var(--text-tertiary); margin-right: 4px; }
+  .hero {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin: 1.5rem 0 1.75rem;
+  }
+  .hero-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+  }
+  .hero-text { flex: 1; min-width: 0; }
+  .hero-text p { margin: 0 0 0.85rem; }
+  .hero-text p:last-child { margin-bottom: 0; }
+  @media (max-width: 480px) {
+    .hero { flex-direction: column; gap: 16px; }
+    .hero-img { width: 110px; height: 110px; }
+  }
+  .research-area {
+    margin-bottom: 16px;
+    padding-left: 16px;
+    border-left: 2px solid var(--border);
+  }
+  .research-area .ra-title {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
+  .research-area .ra-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+  .year-block { margin-top: 1.5rem; }
+  .year-label {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--text-tertiary);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .pub { margin-bottom: 22px; }
+  .pub .pub-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .pub .pub-authors {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 3px;
+    line-height: 1.5;
+  }
+  .pub .pub-meta {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 3px;
+    font-style: italic;
+  }
+  .pub .pub-links {
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: var(--sans);
+    font-style: normal;
+  }
+  .pub .pub-links a { font-style: normal; }
+  .pub .abstract-toggle {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    cursor: pointer;
+    user-select: none;
+    font-family: var(--sans);
+    border: none;
+    background: none;
+    padding: 0;
+    margin-top: 5px;
+  }
+  .pub .abstract-toggle:hover { color: var(--link); }
+  .pub .abstract {
+    display: none;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-top: 10px;
+    padding: 12px 14px;
+    background: var(--bg-secondary);
+    border-radius: 6px;
+  }
+  .pub .abstract.open { display: block; }
+  .news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .news-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    line-height: 1.55;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 14px;
+  }
+  .news-list li:last-of-type { border-bottom: none; }
+  .news-date {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-tertiary);
+    padding-top: 2px;
+  }
+  .news-more { display: none; }
+  .news-more.open { display: grid; }
+  .news-toggle {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-tertiary);
+    background: none;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+  .news-toggle:hover { color: var(--link); }
+  .contact-grid {
+    font-family: var(--sans);
+    font-size: 15px;
+  }
+  .contact-grid div { margin-bottom: 8px; }
+  .contact-grid .lbl {
+    color: var(--text-tertiary);
+    display: inline-block;
+    width: 80px;
+    font-size: 14px;
+  }
+  @media (max-width: 480px) {
+    .news-list li { grid-template-columns: 80px 1fr; gap: 10px; }
+    .wrap { padding: 2rem 1.25rem 3rem; }
+    h1 { font-size: 28px; }
+  }
+</style>
 </head>
 <body>
+<div class="wrap">
 
-<div class="container">
-  <header>
+  <nav class="topnav" aria-label="Page sections">
+    <a href="#about">about</a><span class="sep">·</span>
+    <a href="#research">research</a><span class="sep">·</span>
+    <a href="#publications">publications</a><span class="sep">·</span>
+    <a href="#news">news</a><span class="sep">·</span>
+    <a href="#contact">contact</a><span class="sep">·</span>
+    <a href="resume.pdf">cv</a>
+  </nav>
+
+  <header id="about">
     <h1>Rameen Mahmood</h1>
-    <nav>
-      <a href="#about">about</a> // 
-      <a href="#news">news</a> // 
-      <a href="#contact">contact</a> // 
-      <a href="resume.pdf" target="_blank">resume</a>
-    </nav>
+    <p class="subtitle">PhD candidate<span class="line2">New York University</span></p>
   </header>
 
-  <section id="about" class="profile-section">
-    <div class="profile-img-container">
-      <img src="image.jpg" alt="Rameen Mahmood" class="profile-img">
-    </div>
-    <div class="profile-text">
-      <p>I'm a PhD candidate in the Electrical and Computer Engineering Department at New York University (Tandon). I am part of <a href="https://hdanny.org/" target="_blank">mLab</a>, where I'm advised by Professor Danny Huang. Prior to this, I earned my BSc in Electrical Engineering (Honors) at New York University Abu Dhabi.</p>
-      <p>My research lies at the intersection of <strong>machine learning</strong> and <strong>computer networks</strong>, with a focus on <strong>clinical applications</strong>. My work aims to leverage network traffic analysis as a non-invasive tool for inferring health markers, potentially contributing to the understanding of mental health, neurodegenerative diseases, and other clinical indicators.</p>
-      <p>I also work extensively with <strong>large language models</strong>, including tasks such as fine-tuning, prompt engineering, and jailbreaking.</p>
+  <section class="hero">
+    <img class="hero-img" src="image.jpg" alt="Rameen Mahmood">
+    <div class="hero-text">
+      <p>I'm a PhD candidate in the Electrical and Computer Engineering Department at NYU Tandon, advised by <a href="https://hdanny.org/">Danny Huang</a> in mLab. I earned my BSc in Electrical Engineering (Honors) from NYU Abu Dhabi.</p>
+      <p>My research lies at the intersection of machine learning and computer networks, with a focus on clinical and health applications. I also work with large language models for identifying devices on the network.</p>
     </div>
   </section>
 
-  <section id="news">
-    <h2>News</h2>
-    <ul>
-      <li><b>[Nov 2025]</b> Delivered a guest lecture for ECE-GY 9113 (Big Data) on scalable data pipelines and LLM/ML integration for large-scale analytics</li>
-      <li><b>[Nov 2025]</b> Presented “RouterSense: Turning Home Routers into Scalable, Low-Cost, Long-Term Passive Health Sensors” at the Society for Neuroscience (SfN) 2025</li>
-      <li><b>[Nov 2025]</b> Gave a talk at the University of Chicago on “Decoding the Digital Home: Inferring Devices and Behaviors from Network Traffic” (Network Operations and Internet Security Lab)</li>
-      <li><b>[Oct 2025]</b> Presented Large Language Models for Real-World IoT Device Identification at NYC Privacy Day, Cornell Tech</li>
-      <li><b>[Oct 2025]</b> New <a href="https://arxiv.org/abs/2510.09763" target="_blank">preprint</a> on using network traffic as an ethnographic lens for understanding students’ AI tool practices</li>
-      <li><b>[Sept 2025]</b> New <a href="https://preprints.jmir.org/preprint/84618" target="_blank">preprint</a> on digital phenotyping via passive network traffic monitoring in university students</li>
-      <li>
-        <b>[Sept 2025]</b> New 
-        <a href="https://arxiv.org/abs/2510.13817" target="_blank">preprint</a> 
-        on large language models for real-world IoT device identification 
-        <br>
-        <span style="color: #777; font-style: italic;">
-          A provisional patent related to this work has been filed.
-        </span>
-      </li>
-      <li><b>[April 2025]</b> Guest lecture on machine learning for network security and privacy in <i>ECE-GY 9383: Network Security</i> (Spring 2025).</li>
-      <li><b>[March 2025]</b> Our work (<a href="https://routersense.cyber.nyu.edu/site/" target="_blank">RouterSense</a>) was accepted for presentation at the <a href="https://aaic.alz.org/" target="_blank">Alzheimer's Association International Conference (AAIC) 2025</a>.</li>
-      <li><b>[Nov 2024]</b> Presented <a href="https://routersense.cyber.nyu.edu/site/" target="_blank">RouterSense</a>, a network-based health monitoring system for older adults, at the Association for the Advancement of Artificial Intelligence (AAAI) 2024 Fall Symposium Series on AI for Aging in Place.</li>
-      <li><b>[Oct 2024]</b> Presented <a href="https://hdanny.org/static/ieee-bsn-24.pdf" target="_blank">Your Router as Fitbit</a> at the IEEE-EMBS International Conference on Body Sensor Networks (IEEE BSN 2024), Poster Session.</li>
-      <li><b>[Sept 2024]</b> Guest lecture on "Machine Learning for Big Data" in <i>CUSP-GX 8083: Big Data Management & Analysis</i> (Fall 2024).</li>
-      <li><b>[March 2024]</b> Presented "Decoding Digital Footprints of the Visually Impaired: A Machine Learning Approach to Network Traffic Analysis" at NSBE 2024.</li>
-    </ul>
-  </section>
+  <h2 id="research">Research</h2>
 
-  <footer id="contact">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      <p>📧 <a href="mailto:rameen.mahmood@nyu.edu">rameen.mahmood@nyu.edu</a></p>
-      <p><a href="https://github.com/Rameen-Mahmood" target="_blank"><i class="fab fa-github"></i> Rameen-Mahmood</a></p>
-      <p>🎓 <a href="https://scholar.google.com/citations?user=ceb6wGkAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
+  <div class="research-area">
+    <div class="ra-title">Large language models for identifying devices on the network</div>
+    <div class="ra-desc">Reframing IoT device and vendor identification as a language modeling task over heterogeneous, noisy, real-world network metadata. Includes high-fidelity vendor labeling at scale, instruction-tuning quantized LLMs with curriculum learning, and adversarial stress-testing for resilience under sparsity, protocol drift, and mimicry.</div>
+  </div>
+
+  <div class="research-area">
+    <div class="ra-title">Network traffic analysis + machine learning for digital health</div>
+    <div class="ra-desc">Using passively observed network traffic — from home routers and personal devices — as a non-invasive sensor for behavior, cognition, and health, including sleep, stress, loneliness, and early markers of cognitive change in older adults. Built on transformer-based architectures with per-user adapters.</div>
+  </div>
+
+  <div class="research-area">
+    <div class="ra-title">IoT measurement and security</div>
+    <div class="ra-desc">Large-scale measurement of consumer IoT devices, adversarial robustness of device-fingerprinting systems, and the privacy implications of the smart home.</div>
+  </div>
+
+  <h2 id="publications">Publications</h2>
+
+  <div class="year-block">
+    <div class="year-label">2026</div>
+
+    <div class="pub">
+      <div class="pub-title">Large language models for real-world IoT device identification</div>
+      <div class="pub-authors">Rameen Mahmood, Tousif Ahmed, Sai Teja Peddinti, Danny Yuxing Huang</div>
+      <div class="pub-meta">CoNEXT 2026</div>
+      <div class="pub-links"><a href="https://arxiv.org/abs/2510.13817">arXiv</a></div>
+      <button class="abstract-toggle" data-target="abs1" aria-expanded="false">+ abstract</button>
+      <div class="abstract" id="abs1">The rapid expansion of IoT devices has outpaced current identification methods, creating significant risks for security, privacy, and network accountability. These challenges are heightened in open-world environments, where traffic metadata is often incomplete, noisy, or intentionally obfuscated. We introduce a semantic inference pipeline that reframes device identification as a language modeling task over heterogeneous network metadata. To construct reliable supervision, we generate high-fidelity vendor labels for the IoT Inspector dataset, the largest real-world IoT traffic corpus, using an ensemble of large language models guided by mutual-information and entropy-based stability scores. We then instruction-tune a quantized LLaMA 3.1 8B model with curriculum learning to support generalization under sparsity and long-tail vendor distributions. Our model achieves 98.25% top-1 accuracy and 90.73% macro accuracy across 2,015 vendors while maintaining resilience to missing fields, protocol drift, and adversarial manipulation. Evaluation on an independent IoT testbed, coupled with explanation quality and adversarial stress tests, demonstrates that instruction-tuned LLMs provide a scalable and interpretable foundation for real-world device identification at scale.</div>
     </div>
-  </footer>
+  </div>
+
+  <div class="year-block">
+    <div class="year-label">2025</div>
+
+    <div class="pub">
+      <div class="pub-title">Digital phenotyping via passive network traffic monitoring: feasibility and acceptability in university students</div>
+      <div class="pub-authors">Rameen Mahmood, Donghan Hu, Annabelle David, Zachary Beattie, Jeffrey Kaye, Nabil Alshurafa, Lou Haux, Josiah Hester, Andrew Kiselica, Shinan Liu, Chenxi Qiu, Chao-Yi Wu, Danny Yuxing Huang</div>
+      <div class="pub-meta">JMIR Formative Research, 2025</div>
+      <div class="pub-links"><a href="https://preprints.jmir.org/preprint/84618">link</a></div>
+      <button class="abstract-toggle" data-target="abs2" aria-expanded="false">+ abstract</button>
+      <div class="abstract" id="abs2">A formative study assessing the feasibility and acceptability of passively capturing encrypted smartphone network traffic from university students to monitor day-to-day digital behavior relevant to mental health. Over a two-week prospective deployment at NYU, 38 students enrolled, 29 provided valid network data, 27 remained active for more than five days, and 25 completed exit interviews. Acceptability was evaluated using the System Usability Scale, NASA Task Load Index, and semi-structured interviews. Beyond feasibility, exploratory analyses link traffic-derived features — timing, intensity, and regularity of use — to aspects of digital behavior relevant to health and daily functioning.</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Network traffic as a scalable ethnographic lens for understanding university students' AI usage screen time</div>
+      <div class="pub-authors">Donghan Hu, Rameen Mahmood, Annabelle David, Danny Yuxing Huang</div>
+      <div class="pub-meta">preprint, 2025</div>
+      <div class="pub-links"><a href="https://arxiv.org/abs/2510.09763">arXiv</a></div>
+      <button class="abstract-toggle" data-target="abs3" aria-expanded="false">+ abstract</button>
+      <div class="abstract" id="abs3">AI-driven applications have become woven into students' academic and creative workflows, influencing how they learn, write, and produce ideas. Conventional survey and interview methods are limited by recall bias and underreporting of habitual behaviors, while ethnographic methods face challenges of scale and reproducibility. We introduce a privacy-conscious approach that repurposes VPN-based network traffic analysis as a scalable ethnographic technique for examining students' real-world engagement with AI tools. By capturing anonymized metadata rather than content, the method enables fine-grained behavioral tracing while safeguarding personal information. A three-week field deployment with university students reveals fragmented, short-duration interactions across multiple tools and devices, with intense bursts of activity coinciding with exam periods — patterns mirroring institutional rhythms of academic life.</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">RouterSense: a passive, network-based health monitoring system for in-home patients</div>
+      <div class="pub-authors">Rameen Mahmood, Danny Yuxing Huang</div>
+      <div class="pub-meta">AAIC 2025</div>
+      <div class="pub-links"><a href="https://routersense.cyber.nyu.edu/site/">project page</a></div>
+      <button class="abstract-toggle" data-target="abs4" aria-expanded="false">+ abstract</button>
+      <div class="abstract" id="abs4">RouterSense turns the existing home Wi-Fi router into a passive, low-cost, long-term sensor for behavioral and cognitive health in older adults. By analyzing only metadata from device-router communications — without accessing packet contents — the system captures longitudinal patterns of in-home activity and detects slow drift from a personalized behavioral baseline, with the goal of surfacing early markers of cognitive change.</div>
+    </div>
+  </div>
+
+  <div class="year-block">
+    <div class="year-label">2024</div>
+
+    <div class="pub">
+      <div class="pub-title">RouterSense: a passive, network-based health monitoring system for in-home patients</div>
+      <div class="pub-authors">Rameen Mahmood, Danny Yuxing Huang</div>
+      <div class="pub-meta">AAAI Fall Symposium 2024</div>
+      <div class="pub-links"><a href="https://routersense.ai/AAAI2024_RouterSense.pdf">PDF</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Your router as Fitbit: health monitoring with network traffic</div>
+      <div class="pub-authors">Rameen Mahmood, Danny Yuxing Huang</div>
+      <div class="pub-meta">IEEE-EMBS BSN 2024 · poster</div>
+      <div class="pub-links"><a href="https://mlab.cyber.nyu.edu/static/ieee-bsn-24.pdf">PDF</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Assisted reproductive technology dataset of embryo time-lapse images and clinical data</div>
+      <div class="pub-authors">Dmytro Zhylko, Raquel Del Gallego, Sarah Pardo, Rameen Mahmood, Ya Tung Hsieh, Salma Selim, Daniela Nogueira, Ibrahim El-Khatib, Barbara Lawrenz, Human M. Fatemi, Farah E. Shamout</div>
+      <div class="pub-meta">medRxiv, 2024</div>
+      <div class="pub-links"><a href="https://www.medrxiv.org/content/10.1101/2024.11.01.24316563v2">medRxiv</a></div>
+      <button class="abstract-toggle" data-target="abs5" aria-expanded="false">+ abstract</button>
+      <div class="abstract" id="abs5">Version 1.0 of the Assisted Reproductive Technology (ART) Dataset is a multi-modal fertility dataset from treatments performed at the ART Fertility Clinic in Abu Dhabi between 2015 and 2022. The data combine electronic health records and embryo development image sequences captured with the Vitrolife EmbryoScope time-lapse system, providing detailed treatment, morphology, and pregnancy outcome information. The final processed dataset consists of 14,776 embryos from 1,810 patients across 2,500 treatments. The dataset supports the development of machine learning models for automated analysis of embryo development and viability to assist clinical decision-making.</div>
+    </div>
+  </div>
+
+  <h2 id="news">News</h2>
+
+  <ul class="news-list">
+    <li><span class="news-date">Nov 2025</span><span>Guest lecture for ECE-GY 9113 (Big Data) on scalable data pipelines and LLM/ML integration for large-scale analytics.</span></li>
+    <li><span class="news-date">Nov 2025</span><span>Presented RouterSense at the Society for Neuroscience (SfN) 2025.</span></li>
+    <li><span class="news-date">Nov 2025</span><span>Talk at the University of Chicago: &ldquo;Decoding the digital home&rdquo; (Network Operations and Internet Security Lab).</span></li>
+    <li><span class="news-date">Oct 2025</span><span>Presented our LLM-based IoT identification work at NYC Privacy Day, Cornell Tech.</span></li>
+    <li><span class="news-date">Oct 2025</span><span>New <a href="https://arxiv.org/abs/2510.09763">preprint</a> on network traffic as an ethnographic lens for AI tool practices.</span></li>
+    <li class="news-more"><span class="news-date">Sept 2025</span><span>New <a href="https://preprints.jmir.org/preprint/84618">preprint</a> on digital phenotyping via passive network traffic monitoring.</span></li>
+    <li class="news-more"><span class="news-date">Sept 2025</span><span>New <a href="https://arxiv.org/abs/2510.13817">preprint</a> on LLMs for IoT device identification &mdash; provisional patent filed.</span></li>
+    <li class="news-more"><span class="news-date">Apr 2025</span><span>Guest lecture in ECE-GY 9383: Network Security (Spring 2025).</span></li>
+    <li class="news-more"><span class="news-date">Mar 2025</span><span><a href="https://routersense.cyber.nyu.edu/site/">RouterSense</a> accepted to AAIC 2025.</span></li>
+    <li class="news-more"><span class="news-date">Nov 2024</span><span>Presented RouterSense at the AAAI 2024 Fall Symposium on AI for Aging in Place.</span></li>
+    <li class="news-more"><span class="news-date">Oct 2024</span><span>Presented &ldquo;Your router as Fitbit&rdquo; at IEEE-EMBS BSN 2024.</span></li>
+    <li class="news-more"><span class="news-date">Sept 2024</span><span>Guest lecture in CUSP-GX 8083: Big Data Management &amp; Analysis.</span></li>
+    <li class="news-more"><span class="news-date">Mar 2024</span><span>Presented &ldquo;Decoding digital footprints of the visually impaired&rdquo; at NSBE 2024.</span></li>
+  </ul>
+  <button class="news-toggle" id="news-btn" aria-expanded="false">show older news &darr;</button>
+
+  <h2 id="contact">Contact</h2>
+  <div class="contact-grid">
+    <div><span class="lbl">email</span> <a href="mailto:rameen.mahmood@nyu.edu">rameen.mahmood@nyu.edu</a></div>
+    <div><span class="lbl">github</span> <a href="https://github.com/Rameen-Mahmood">Rameen-Mahmood</a></div>
+    <div><span class="lbl">scholar</span> <a href="https://scholar.google.com/citations?user=ceb6wGkAAAAJ&amp;hl=en">Google Scholar</a></div>
+    <div><span class="lbl">cv</span> <a href="resume.pdf">resume.pdf</a></div>
+  </div>
+
 </div>
 
+<script>
+  document.querySelectorAll('.abstract-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var t = document.getElementById(btn.dataset.target);
+      var open = t.classList.toggle('open');
+      btn.textContent = open ? '\u2212 abstract' : '+ abstract';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  var newsBtn = document.getElementById('news-btn');
+  newsBtn.addEventListener('click', function(){
+    var items = document.querySelectorAll('.news-more');
+    var isOpen = items[0].classList.contains('open');
+    items.forEach(function(i){ i.classList.toggle('open', !isOpen); });
+    newsBtn.textContent = isOpen ? 'show older news \u2193' : 'hide older news \u2191';
+    newsBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  });
+</script>
 </body>
 </html>
