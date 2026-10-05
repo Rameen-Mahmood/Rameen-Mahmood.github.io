@@ -300,16 +300,16 @@
     <div class="pub">
       <div class="pub-title">Longer Records, Broader Invariance: The Hidden Scaling Problem in Longitudinal Contrastive Learning</div>
       <div class="pub-authors"><span class="me">Rameen Mahmood</span>, Xuhai &ldquo;Orson&rdquo; Xu, Zachary Beattie, Jeffrey Kaye, Danny Yuxing Huang</div>
-      <div class="pub-meta">preprint, 2026</div>
+      <div class="pub-meta">preprint, under review at ICLR 2027</div>
       <div class="pub-links"><a href="https://arxiv.org/abs/2609.36409">arXiv</a></div>
       <button class="abstract-toggle" data-target="abs6" aria-expanded="false">+ abstract</button>
       <div class="abstract" id="abs6">Longitudinal data are valuable because people change. Yet the objectives used to learn from these data can inadvertently erase that change. In person-level contrastive learning, observations from the same person are treated as positives; as records grow, those positives can span increasingly distant &mdash; and increasingly different &mdash; behavioral states. More history can therefore produce not only more data, but broader invariance. We show that this distinction is fundamental. We separate <em>record span</em>, how much history the learner sees, from <em>supervision span</em>, how far across that history positive-pair supervision reaches. Across in-home sensing records spanning up to 2.7 years, broader supervision systematically suppresses recoverable changing-state information, even when the available history is held fixed. At the broadest span, less than 10% of the information recoverable from an untrained encoder remains. Yet keeping positives local is not sufficient: as records grow, even distant states that are never paired become increasingly similar. Explicitly contrasting other observations from the same person reverses this loss without shortening the record, revealing a second route by which longitudinal scale can broaden invariance. Finally, we prospectively reproduce the supervision-span effect in 199 GLOBEM participants. Longitudinal scale therefore presents a choice: more history need not mean more invariance. By controlling what is held invariant as records grow, we can preserve the change that made the longitudinal data valuable in the first place.</div>
     </div>
 
     <div class="pub">
-      <div class="pub-title">Learning Behavioral Signals from Encrypted Smartphone Network Traffic</div>
+      <div class="pub-title">From Packets to Patterns: Interpreting Encrypted Network Traffic as Longitudinal Behavioral Signals</div>
       <div class="pub-authors"><span class="me">Rameen Mahmood</span>, Omar El Shahawy, Souptik Barua, Zachary Beattie, Jeffrey Kaye, Xuhai &ldquo;Orson&rdquo; Xu, Chao-Yi Wu, Danny Yuxing Huang</div>
-      <div class="pub-meta">preprint, 2026</div>
+      <div class="pub-meta">ACM IMWUT (UbiComp), 2026</div>
       <div class="pub-links"><a href="https://arxiv.org/abs/2605.01616">arXiv</a></div>
       <button class="abstract-toggle" data-target="abs0" aria-expanded="false">+ abstract</button>
       <div class="abstract" id="abs0">Human behavior is difficult to observe continuously at scale, yet it leaves measurable traces in everyday device use. We test whether encrypted smartphone network traffic &mdash; a ubiquitous, always-on, passive sensing modality &mdash; can passively capture behavioral patterns related to sleep, stress, and loneliness. We model shared behavioral structure using a transformer backbone with per-user adapters, allowing the model to represent both typical individual behavior and deviations from it. To make these representations interpretable, we apply a sparse autoencoder to extract behavioral features corresponding to distinct patterns of activity. We relate these features to sleep disturbance, stress, and loneliness using generalized estimating equations with Mundlak decomposition, separating between-person differences from within-person changes over time. We find that the three outcomes reflect distinct temporal structures: stress is primarily associated with stable between-person differences, loneliness with within-person variation, and sleep disturbance with a combination of both. Notably, these within-person dynamics are not captured by predefined network-traffic features, demonstrating the value of learned representations for longitudinal behavioral sensing. These results establish encrypted network traffic as a viable passive sensing modality, revealing interpretable behavioral dynamics &mdash; particularly deviations from an individual's baseline &mdash; that are not visible in raw traffic features.</div>
@@ -386,6 +386,8 @@
   <h2 id="news">News</h2>
 
   <ul class="news-list">
+    <li><span class="news-date">Oct 2026</span><span><a href="https://arxiv.org/abs/2605.01616">From Packets to Patterns</a> accepted to ACM IMWUT (UbiComp).</span></li>
+    <li><span class="news-date">Sept 2026</span><span>New <a href="https://arxiv.org/abs/2609.36409">preprint</a> on the hidden scaling problem in longitudinal contrastive learning, under review at ICLR 2027.</span></li>
     <li><span class="news-date">May 2026</span><span>New <a href="https://arxiv.org/abs/2605.01616">preprint</a> on encrypted network traffic as longitudinal behavioral signals.</span></li>
     <li><span class="news-date">Apr 2026</span><span><a href="https://arxiv.org/abs/2510.13817">LLMs for IoT device identification</a> accepted to ACM CoNEXT 2026.</span></li>
     <li><span class="news-date">Mar 2026</span><span><a href="https://preprints.jmir.org/preprint/84618">Digital phenotyping</a> paper accepted to JMIR Formative Research.</span></li>
